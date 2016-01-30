@@ -1,0 +1,12 @@
+﻿<% provide(:title, '角色用户') %>
+<h1>角色管理</h1>
+<hr>
+<h2><%= link_to "新建角色", new_role_path %></h2>
+<hr>
+  <% if @roles.any? %>
+	<% @roles.each do |role| %>
+		<li>角色序号：<%= role.id %>；角色名称：<%= role.name %>；角色定义：<%= role.definition %>。    | <%= link_to "删除", role, method: :delete, data: { confirm: "确定删除?" } %> | <%= link_to "修改", edit_role_path(role) %></li>
+	<% end %>
+  <% end %>
+
+

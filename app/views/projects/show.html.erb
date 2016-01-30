@@ -1,0 +1,52 @@
+<% provide(:title, "项目信息") %>
+<div class="row">
+	<h1>项目信息</h1>
+	<h2><%= link_to "修改项目", edit_project_path(@project) %> | 
+	<%= link_to "删除项目", @project, meliod: :delete, data: { confirm: "确定删除?" } %>
+	</h2>
+</div>
+<div class="row">
+
+  <div class="col-md-4 col-md-offset-1">
+	
+  	<h3>
+		<li>项目名称：<%= @project.name %></li>
+		<li>项目编号：<%= @project.code %></li>
+		<li>项目类型：<%= @project.ProjectType.name %></li>
+		<li>项目负责人：<%= @project.user.name %></li>
+		<li>项目状态：<%= @project.ProjectStatus.name %></li>
+		<li>项目开始时间：<%= @project.start_time %></li>
+		<li>项目结束时间：<%= @project.end_time %></li>
+	</h3>
+
+  </div>
+  <div class="col-md-7">
+    <section class="user_info">
+	实施部门：
+    <% if @project.implements.any? %>
+      <ol class="worklogs">
+        <%= render @implements %>
+      </ol>
+      <%= will_paginate @implements %>
+    <% end %>
+	</section>
+	<section class="user_info">
+	参与人员：
+    <% if @project.partakers.any? %>
+      <ol class="worklogs">
+        <%= render @partakers %>
+      </ol>
+      <%= will_paginate @partakers %>
+    <% end %>
+    </section>
+	<section class="user_info">
+	本项目时间计划：
+    <% if @project.plans.any? %>
+      <ol class="worklogs">
+        <%= render @plans %>
+      </ol>
+      <%= will_paginate @plans %>
+    <% end %>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  content: MyText
+  start: 2016-01-20
+  plan_end: 2016-01-20
+  end: 2016-01-20
+  status: 1
+  project_id: 
+
+two:
+  name: MyString
+  content: MyText
+  start: 2016-01-20
+  plan_end: 2016-01-20
+  end: 2016-01-20
+  status: 1
+  project_id: 

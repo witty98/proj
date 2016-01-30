@@ -1,0 +1,42 @@
+﻿<div class="row">
+    <%= form_for(@project) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+		  <%= f.label "项目名称" %>
+		  <%= f.text_field :name,:class => 'form-control' %>
+	  <div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "项目编号" %>:
+		  <%= f.text_field :code ,:readonly => true,:class => 'form-control'%>
+		  <%= f.hidden_field :monthid ,:class => 'form-control'%>
+		</div>  	 
+		<div class="col-xs-5 col-md-offset-2">
+		  <%= f.label "项目类型" %>
+		  <%= collection_select(:project ,:ProjectType_id , ProjectType.all, :id, :name,:class => 'form-control') %>	  
+		</div>  
+	</div>  
+
+	<div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "项目负责人" %>
+		  <%= collection_select(:project ,:user_id , User.all, :id, :namecn) %>	
+	    </div>
+		<div class="col-xs-5 col-md-offset-2">	  
+		  <%= f.label "项目状态" %>
+		  <%= collection_select(:project ,:ProjectStatus_id , ProjectStatus.all, :id, :name) %>	  
+	    </div>
+	</div>  
+	
+	<div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "项目开始时间" %>
+  		  <%= f.date_select :start_time,use_month_numbers: true %>
+
+	    </div>
+		<div class="col-xs-5 col-md-offset-2">	  
+		  <%= f.label "项目结束时间" %>
+		  <%= f.date_select :end_time,use_month_numbers: true %>
+		</div>
+	</div>    
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+</div>

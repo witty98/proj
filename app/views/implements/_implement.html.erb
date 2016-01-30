@@ -1,0 +1,7 @@
+﻿<li><%=implement.department.name%>
+  负责实施以下工作：<%= implement.job %>
+  <br>
+  <%= link_to "修改部门任务", edit_implement_path(implement) %>
+  <%= link_to "删除部门任务", implement, method: :delete,
+                                       data: { confirm: "确认删除?" } %>
+</li>

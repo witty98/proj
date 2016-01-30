@@ -1,0 +1,5 @@
+﻿<li><%=partaker.user.name%>
+  <br>
+  <%= link_to "删除参与人员", partaker, method: :delete,
+                                       data: { confirm: "确认删除?" } %>
+</li>

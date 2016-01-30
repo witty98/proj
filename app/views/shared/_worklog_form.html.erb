@@ -1,0 +1,8 @@
+﻿<%= form_for(@worklog) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  	<h1>快速创建工作日志</h1>
+    <%= f.text_area :content, placeholder: "新建工作日志..." %>
+  </div>
+  <%= f.submit "保存工作日志", class: "btn btn-primary" %>
+<% end %>

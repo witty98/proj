@@ -1,0 +1,48 @@
+﻿<div class="row">
+    <%= form_for(@partyb) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+		  <%= f.label "单位名称" %>
+		  <%= f.text_field :name,:class => 'form-control' %>
+	  <div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "单位法人" %>:
+		  <%= f.text_field :corporation,:class => 'form-control'%>
+		</div>  	 
+		<div class="col-xs-5 col-md-offset-2">
+		  <%= f.label "法人电话" %>
+		  <%= f.text_field :corporation_tel,:class => 'form-control'%>	  
+		</div>  
+	 </div>  
+	  <div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "单位联系人" %>:
+		  <%= f.text_field :contacts,:class => 'form-control'%>
+		</div>  	 
+		<div class="col-xs-5 col-md-offset-2">
+		  <%= f.label "联系人电话" %>
+		  <%= f.text_field :contacts_tel,:class => 'form-control'%>	  
+		</div>  
+	 </div>  
+	  <div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "开户银行" %>:
+		  <%= f.text_field :bank,:class => 'form-control'%>
+		</div>  	 
+		<div class="col-xs-5 col-md-offset-2">
+		  <%= f.label "银行账户" %>
+		  <%= f.text_field :account,:class => 'form-control'%>	  
+		</div>  
+	 </div> 
+	  <div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "单位地址" %>:
+		  <%= f.text_field :address,:class => 'form-control'%>
+		</div>  	 
+		<div class="col-xs-5 col-md-offset-2">
+		  <%= f.label "邮编" %>
+		  <%= f.text_field :postcode,:class => 'form-control'%>	  
+		</div>  
+	 </div> 	 
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+</div>

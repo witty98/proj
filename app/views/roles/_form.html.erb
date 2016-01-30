@@ -1,0 +1,15 @@
+﻿    <%= form_for(@role) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+	
+	
+      <%= f.label "角色ID" %>
+      <%= f.text_field :id,:class => 'form-control'%>
+
+      <%= f.label "输入角色名（不可重复）" %>
+      <%= f.text_field :name,:class => 'form-control' %>
+	  
+      <%= f.label "角色定义" %>
+      <%= f.text_field :definition,:class => 'form-control' %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>

@@ -1,0 +1,30 @@
+﻿<% provide(:title, '项目清单') %>
+<h1>项目清单</h1>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <!-- <h3>
+		<%= link_to "新建项目", new_project_path  %> |
+		<%= link_to "新建部门任务", new_implement_path  %> |
+		<%= link_to "新建项目参与人员", new_partaker_path  %> | 
+		<%= link_to "新建项目计划", new_plan_path %> 
+	</h3> -->
+	<%= will_paginate %>
+	<table class="table table-striped table-bordered">
+	  <tr>
+		<th>项目名称</th>
+		<th>项目编号</th>
+		<th>项目类型</th>
+		<th>项目负责人</th>
+		<th>项目状态</th>
+		<th>项目开始时间</th>
+		<th>项目结束时间</th>
+		<th>删除</th>
+		<th>修改</th>
+	  </tr>
+	  <% @projects.each do |project| %>
+		<%= render project %>
+	  <% end %>
+	</table>
+	<%= will_paginate %>
+  </div>
+</div>

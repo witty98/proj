@@ -1,0 +1,11 @@
+﻿  <tr>
+    <th><%= link_to contract.name, contract %></th>
+    <th><%= contract.code %></th>
+	<th><%= contract.project.name %></th>
+	<th><%= contract.partyb.name %></th>
+	<th><%= contract.total %></th>
+	<th><%= contract.sign_time %></th>
+	<th><%= contract.time_limit %></th>
+	<th><%= contract.paytype.name %></th>
+	<th><%= link_to "修改", edit_contract_path(contract) %></th>
+  </tr>

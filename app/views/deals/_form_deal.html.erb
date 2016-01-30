@@ -1,0 +1,19 @@
+﻿<div class="row">
+    <%= form_for(@deal) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+		<%= f.label "收/付名称" %>:
+		<%= f.text_field :name ,:class => 'form-control'%>
+	  <div class="row">
+		<div class="col-xs-5">
+		  <%= f.label "合同" %>
+		  <%= collection_select(:deal ,:contract_id , Contract.all, :id, :name,:class => 'form-control') %>
+		</div> 
+		<div class="col-xs-5 col-md-offset-2">
+		  <%= f.label "计划金额（单位：元）" %>
+		  <%= f.text_field :plan_amount,:class => 'form-control'%>	
+		</div>  
+	</div>  
+ 
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>
+</div>

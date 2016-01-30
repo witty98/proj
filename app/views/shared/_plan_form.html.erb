@@ -1,0 +1,20 @@
+﻿	<%= form_for(@plan) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+	  		  <%= f.label "选择项目名称" %>
+			  <%= collection_select(:plan ,:project_id , Project.all, :id, :name) %> 
+			  
+			  <%= f.label "计划步骤名称" %>
+			  <%= f.text_field :name, placeholder: "计划步骤为..." ,:class => 'form-control' %>
+			  
+			  <%= f.label "计划步骤内容" %>
+			  <%= f.text_area :content, placeholder: "计划内容为..." ,:class => 'form-control' %>
+			  		  
+			  <%= f.label "计划步骤开始时间" %>
+  		      <%= f.date_select :start,use_month_numbers: true ,:class => 'form-control'%>
+			  
+			  <%= f.label "计划步骤完成时间" %>
+  		      <%= f.date_select :plan_end,use_month_numbers: true ,:class => 'form-control'%>
+	  <%= f.submit "保存计划步骤", class: "btn btn-primary" %>
+	<% end %>
+
+	

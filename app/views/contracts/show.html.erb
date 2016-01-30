@@ -1,0 +1,22 @@
+<% provide(:title, "合同信息") %>
+<% provide(:button_text, '保存') %>
+<h1>修改合同信息</h1>
+<div class="row">
+  <aside class="col-md-4">
+    <%= render 'form_contract' %>
+	<hr>
+	合同收/付情况：
+	<hr>
+    <% if @contract.deals.any? %>
+        <%= render @deals %>
+		<%= will_paginate @deals %>
+	<% end %>
+  </aside>
+  <div class="col-md-8">
+    <% if @contract.avatar? %>
+		<iframe src=<%= @contract.avatar_url %> width="100%" height="780" style="border: none;"> </iframe>
+	<% else %>
+        <li><%= link_to "添加合同", edit_contract_path(@contract) %></li>
+    <% end %>
+  </div>
+</div>

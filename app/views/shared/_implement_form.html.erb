@@ -1,0 +1,10 @@
+﻿<%= form_for(@implement) do |f| %>
+	  <%= render 'shared/error_messages', object: f.object %>
+	  		  <%= f.label "选择项目" %>
+			  <%= collection_select(:implement ,:project_id , Project.all, :id, :name) %>	  
+			  <%= f.label "选择部门" %>
+			  <%= collection_select(:implement ,:department_id , Department.all, :id, :name) %>	  
+  
+			  <%= f.text_area :job, placeholder: "部门负责内容为..." %>
+	  <%= f.submit "保存部门任务安排", class: "btn btn-primary" %>
+<% end %>

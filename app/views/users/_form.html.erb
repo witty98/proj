@@ -1,0 +1,21 @@
+﻿    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+	
+	
+      <%= f.label "输入用户名（不可重复）" %>
+      <%= f.text_field :name ,:class => 'form-control'%>
+
+      <%= f.label "输入姓名" %>
+      <%= f.text_field :namecn,:class => 'form-control' %>
+	  
+      <%= f.label "角色" %>
+	  <%= collection_select(:user ,:role_id , Role.all, :id, :name,:class => 'form-control') %>
+	  
+      <%= f.label "输入密码" %>
+      <%= f.password_field :password,:class => 'form-control' %>
+
+      <%= f.label :password_confirmation, "再次重复密码" %>
+      <%= f.password_field :password_confirmation,:class => 'form-control' %>
+
+      <%= f.submit yield(:button_text), class: "btn btn-primary" %>
+    <% end %>

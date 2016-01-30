@@ -1,0 +1,7 @@
+﻿<li><%=partyb.name%>
+  <br>
+  <%= link_to "修改信息",edit_partyb_path(partyb) %>
+  <%= link_to "删除单位", partyb, method: :delete,
+                                       data: { confirm: "确认删除?" } %>
+  <br>
+  </li>

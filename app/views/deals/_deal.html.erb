@@ -1,0 +1,11 @@
+﻿<li>收/付款名称：<%= deal.name %> <br>
+	收/付类型：<%= deal.contract.paytype.name %><br>
+	计划金额：<%= deal.plan_amount %><br>
+	<% if deal.amount.nil? %><br>
+		<%= link_to "收/付", edit_deal_path(deal) %>
+	<% else %>
+		实际金额：<%= deal.amount %>
+		收/付时间：	<%= deal.deal_time %>
+		<%= link_to "修改", edit_deal_path(deal) %>
+    <% end %>
+  </li>

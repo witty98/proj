@@ -1,0 +1,58 @@
+﻿<% provide(:title, "首页") %>
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="worklog_form">
+        <%= render 'shared/worklog_form' %>
+      </section>
+    </aside>
+	
+	<div class="col-md-7 col-md-offset-1">
+		<h1>您的工作</h1>
+	  <h3>
+		<% case current_user.role_id %>
+			<% when 0 %>
+				<%= render 'admin'%>			
+			<% when 1 %>
+				<%= link_to "项目清单", projects_path  %> <br>	
+				<%= link_to "合同清单", contracts_path %>			
+			<% when 2 %>
+				<%= link_to "项目清单", projects_path  %> <br>	
+				<%= link_to "合同清单", contracts_path %>
+			<% when 3 %>
+				<%= link_to "项目清单", projects_path  %> <br>	
+				<%= link_to "合同清单", contracts_path %>
+			<% when 4 %>
+				<%= link_to "项目清单", projects_path  %> <br>	
+				<%= link_to "合同清单", contracts_path %> <br>
+				<%= link_to "新建项目计划", new_plan_path %> <br>
+				<%= link_to "新建项目参与人员", new_partaker_path %>
+			<% when 5 %>
+				<%= render 'project'%>
+				<%= render 'contract'%>	
+			<% when 6 %>
+				<%= link_to "项目清单", projects_path  %> <br>	
+				<%= link_to "合同清单", contracts_path %> <br>	
+				<%= link_to "收/付款记录", deals_path %>
+			<% when 7 %>
+				<%= link_to "项目清单", projects_path  %> <br>	
+				<%= link_to "合同清单", contracts_path %> <br>
+				<%= link_to "新建项目", new_project_path  %> <br>
+				<%= link_to "新建部门任务", new_implement_path  %> <br>
+				<%= link_to "新建合同" ,new_contract_path %> <br>
+				<%= link_to "业务往来单位信息记录", partybs_path %>				
+		<% end %>
+	  </h3>
+    </div>
+  </div>
+<% else %>
+  <div class="center jumbotron">
+  <h1>欢迎使用项目管理登记系统</h1>
+    <h2>
+      项目首页
+    </h2>
+  </div>
+<% end %>

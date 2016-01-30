@@ -1,0 +1,5 @@
+﻿<li>
+  <%= link_to user.name, user %>
+    | <%= link_to "删除", user, method: :delete, data: { confirm: "确定删除?" } %>
+	| <%= link_to "修改", edit_user_path(user) %>
+</li>

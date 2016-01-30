@@ -1,0 +1,30 @@
+﻿<div class="row">	
+	<h1>合同清单</h1>
+	<section class="user_info col-md-10 col-md-offset-1">
+	<!-- <h3>
+		<%= link_to "新建合同" ,new_contract_path %> |
+		<%= link_to "业务往来单位信息记录", partybs_path %>	|
+		<%= link_to "收/付款记录", deals_path %>	
+	</h3> -->
+	<hr>	
+	<%= will_paginate @contracts %>
+	<table class="table table-striped table-bordered">
+	  <tr>
+		<th>合同名称</th>
+		<th>合同编号</th>
+		<th>项目编号</th>
+		<th>对方名称</th>
+		<th>合同总价</th>
+		<th>签订时间</th>
+		<th>工期</th>
+		<th>收付类型</th>
+		<th>修改</th>
+	  </tr>
+	  <% @contracts.each do |contract| %>
+		<%= render contract %>
+	  <% end %>
+	</table>
+	<%= will_paginate @contracts %>
+    </section>
+
+</div>

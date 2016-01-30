@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  code: MyString
+  partyc: MyString
+  collect_or_pay: false
+  director：string: MyString
+  director_tel: MyString
+  total: 
+  surplus: 
+  detail: MyText
+  sign_time: 2016-01-21
+  time_limit: 1
+  project_id: 
+  partyb_id: 
+
+two:
+  name: MyString
+  code: MyString
+  partyc: MyString
+  collect_or_pay: false
+  director：string: MyString
+  director_tel: MyString
+  total: 
+  surplus: 
+  detail: MyText
+  sign_time: 2016-01-21
+  time_limit: 1
+  project_id: 
+  partyb_id: 

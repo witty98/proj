@@ -1,0 +1,7 @@
+﻿<h1><span><%= link_to "个人信息", current_user %></span>
+	<br>
+	<%= current_user.namecn %>，您好！
+	<br>你是：<%= current_user.role.name %>
+	</h1>
+
+<span>您有<%= current_user.worklogs.count  %>篇工作日志</span>

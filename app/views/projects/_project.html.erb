@@ -1,0 +1,11 @@
+﻿  <tr>
+    <th><%= link_to project.name, project %></th>
+    <th><%= project.code %></th>
+	<th><%= project.ProjectType.name %></th>
+	<th><%= project.user.name %></th>
+	<th><%= project.ProjectStatus.name %></th>
+	<th><%= project.start_time %></th>
+	<th><%= project.end_time %></th>
+	<th><%= link_to "删除", project, method: :delete, data: { confirm: "确定删除?" } %></th>
+	<th><%= link_to "修改", edit_project_path(project) %></th>
+  </tr>

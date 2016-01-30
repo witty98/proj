@@ -1,0 +1,10 @@
+﻿<li>
+计划步骤名称：<%= plan.name %> | 
+计划步骤内容：<%= plan.content %> | 
+计划开始时间： <%= plan.start.strftime("%Y-%m-%d") %>  | 
+计划完成时间： <%= plan.plan_end.strftime("%Y-%m-%d") %>  | 
+  <br>
+  <%= link_to "修改步骤" , edit_plan_path(plan) %>
+  <%= link_to "删除计划步骤", plan, method: :delete,
+                                      data: { confirm: "确认删除?" } %>
+</li>

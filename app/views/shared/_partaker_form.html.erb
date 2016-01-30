@@ -1,0 +1,14 @@
+﻿
+选择参与人员：
+<%= form_for(@partaker) do |f| %>
+	<%= render 'shared/error_messages', object: f.object %>
+	  	
+	<%= f.label "选择项目" %>
+	<%= collection_select(:partaker ,:project_id , Project.all, :id, :name) %>	
+	
+	<% @users.each do |user| %>  
+		<%= check_box_tag 'users[]', user.id%>  
+		<%= label_tag user.name %>  
+	<% end %> 		  
+	<%= f.submit "保存参与人员", class: "btn btn-primary" %>
+<% end %>
